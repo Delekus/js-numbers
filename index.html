@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<style>
+		h1 {
+			color: red;
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Обновить страницу Ctrl + R</h1>
+
+
+	<script>
+
+		let oneNumber = prompt('Укажи первое число', '');
+		let twoNumber = prompt('Укажи второе число', '');
+		// Конвертирование
+		oneNumber = parseFloat(oneNumber);
+		twoNumber = parseFloat(twoNumber);
+		console.log(oneNumber);
+		console.log(twoNumber);
+
+		if ((isNaN(oneNumber)) && (isNaN(twoNumber))) {
+			alert('Введите значения заново!');
+		}
+		else if ((isNaN(oneNumber))) {
+			alert('Первое значение не является числом!')
+		}
+		else if ((isNaN(twoNumber))) {
+			alert('Второе значение не является числом!')
+		}
+		else {
+			/*Проверка на четность первого числа*/
+			let messageParityOne = ((oneNumber % 2) === 0) === true ? 'четное.' : 'нечетное.';
+			// Проверка на четность второго числа
+			let messageParityTwo = ((twoNumber % 2) === 0) === true ? 'четное.' : 'нечетное.';
+			/*Проверка дробное ли первое число*/
+			let messageFrOne = ((oneNumber % 1) !== 0) === true ? 'дробное.' : 'целое.';
+			/*Проверка дробное ли второе число*/
+			let messageFrTwo = ((twoNumber % 1) !== 0) === true ? 'дробное.' : 'целое.';
+			/*Положительное ли первое число*/
+			let messagePositiveOne;
+			if (oneNumber > 0) {
+				messagePositiveOne = "положительное."
+			}
+			else if (oneNumber <0) {
+				messagePositiveOne = "отрицательное."
+			}
+			else {
+				messagePositiveOne = "равно нулю."
+			}
+			/*Положительное ли второе число*/
+			let messagePositiveTwo;
+			if (twoNumber > 0) {
+				messagePositiveTwo = "положительное."
+			}
+			else if (twoNumber <0) {
+				messagePositiveTwo = "отрицательное."
+			}
+			else {
+				messagePositiveTwo = "равно нулю."
+			}
+			/*Какое число больше*/
+			let messageCompareNumbers;
+			if (oneNumber > twoNumber) {
+				messageCompareNumbers = "Первое число больше.";
+			}
+			else if (twoNumber > oneNumber) {
+				messageCompareNumbers = "Второе число больше.";
+			}
+			else {
+				messageCompareNumbers = "Числа равны.";
+			}
+			console.log('Значение первого числа = ' + oneNumber + " Значение второго числа = " + twoNumber + '\nПервое число - ' + messageParityOne + ' Второе число - ' + messageParityTwo + '\nПервое число - ' + messageFrOne + ' Второе число - ' + messageFrTwo + '\nПервое число - ' + messagePositiveOne + ' Второе число - ' + messagePositiveTwo + '\n' + messageCompareNumbers);
+		}
+
+
+	</script>
+</body>
+
+</html>
